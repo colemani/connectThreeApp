@@ -12,10 +12,11 @@ public class MainActivity extends AppCompatActivity
     {
         //activeplayer: 0 batman, 1 superman, 2 empty
       
-        int activeplayer = 0;
-        
+    int activeplayer = 0;
+    // array with empty states in each spot
     int gamestate[] = {2, 2, 2, 2, 2, 2, 2, 2, 2};
-    int[][] winningPositions = {{1,2,3}, {4,5,6}, {7,8,9}, {1,4,7}, {2,5,9}, {3,6,9}, {3,5,7}, {1,5,9}};
+     // creates an array of winning positions
+     int[][] winningPositions = {{1,2,3}, {4,5,6}, {7,8,9}, {1,4,7}, {2,5,9}, {3,6,9}, {3,5,7}, {1,5,9}};
     
         public void dropIn (View view)
         
@@ -23,14 +24,18 @@ public class MainActivity extends AppCompatActivity
           
             ImageView counter = (ImageView) view;
             counter.getTag();
-            Log.i("Tag", counter.getTag().toString());
+            // creates a tag of which image in the table has been selected
+       
             int tappedCounter = Integer.parseInt(counter.getTag().toString());
            
+            // this populates the
             gamestate[tappedCounter] = activeplayer;
+
             counter.setTranslationY(-1500);
             
             
-            if(activeplayer==0) {
+            if(activeplayer==0)
+            {
                 counter.setImageResource(R.drawable.batmanbutton);
                // gamestate [tappedCounter] = activeplayer;
                 activeplayer=1;
@@ -38,13 +43,15 @@ public class MainActivity extends AppCompatActivity
             else
             {
                 counter.setImageResource(R.drawable.supermanbutton);
-               // gamestate [tappedCounter] = activeplayer;
                 activeplayer=0;
             }
             counter.animate().translationYBy(1500).rotation(3600).setDuration(1000);
             
             for (int[] winningposition : winningPositions)
             {
+                Log.i("Tag", Integer.toString((gamestate[winningposition[0]])));
+              
+                
                 if ((gamestate[winningposition[0]] == gamestate[winningposition[1]] && gamestate[winningposition[1]] != 2))
                 //&& gamestate[winingposition[1]] == gamestate[winingposition[2]] && gamestate[winingposition[1]] != 2)
                 {
