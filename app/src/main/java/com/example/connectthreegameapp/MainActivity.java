@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity
                 {
                     Toast.makeText(this, "someone won", Toast.LENGTH_SHORT).show();
                 }
+                
+                
                 else
                 {
                     Toast.makeText(this, "keep playing", Toast.LENGTH_SHORT).show();
