@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity
                 if ((gamestate[winningposition[0]] == gamestate[winningposition[1]] && gamestate[winningposition[1]] != 2))
                 //&& gamestate[winingposition[1]] == gamestate[winingposition[2]] && gamestate[winingposition[1]] != 2)
                 {
-                    Toast.makeText(this, "someone has won", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "someone won", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
